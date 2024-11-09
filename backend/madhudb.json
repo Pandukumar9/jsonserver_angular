@@ -1,0 +1,27 @@
+{
+  "BOOKS": [
+    {
+      "id": "e7fb",
+      "bookName": "hyder",
+      "bookPrice": 44,
+      "bookType": "fiction",
+      "bookDescription": "sdsd"
+    },
+    {
+      "id": "018e",
+      "bookName": "higsv",
+      "bookPrice": 6,
+      "bookType": "biography",
+      "bookDescription": "ywgwdyqw"
+    },
+    {
+      "id": "d3bf",
+      "bookName": "ghai",
+      "bookPrice": 7,
+      "bookType": "science",
+      "bookDescription": "jadbha"
+    }
+  ],
+  "CARS": [],
+  "BIKES": []
+}

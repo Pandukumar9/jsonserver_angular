@@ -1,0 +1,81 @@
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-header">
+        <h5>Add Book</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <!-- Book Name -->
+          <div class="form-group">
+            <label for="bookName">Book Name</label>
+            <input
+              type="text"
+              id="bookName"
+              formControlName="bookName"
+              class="form-control"
+              placeholder="Enter book name"
+            />
+            <div *ngIf="bookForm.get('bookName')?.touched && bookForm.get('bookName')?.invalid" class="text-danger">
+              <small *ngIf="bookForm.get('bookName')?.errors?.['required']">Book name is required.</small>
+              <small *ngIf="bookForm.get('bookName')?.errors?.['minlength']">Book name must be at least 3 characters.</small>
+            </div>
+          </div>
+  
+          <!-- Book Price -->
+          <div class="form-group">
+            <label for="bookPrice">Book Price</label>
+            <input
+              type="number"
+              id="bookPrice"
+              formControlName="bookPrice"
+              class="form-control"
+              placeholder="Enter book price"
+            />
+            <div *ngIf="bookForm.get('bookPrice')?.touched && bookForm.get('bookPrice')?.invalid" class="text-danger">
+              <small *ngIf="bookForm.get('bookPrice')?.errors?.['required']">Book price is required.</small>
+              <small *ngIf="bookForm.get('bookPrice')?.errors?.['min']">Price must be at least 1.</small>
+            </div>
+          </div>
+  
+          <!-- Book Type -->
+          <div class="form-group">
+            <label for="bookType">Book Type</label>
+            <select
+              id="bookType"
+              formControlName="bookType"
+              class="form-control"
+            >
+              <option value="" disabled>Select book type</option>
+              <option value="fiction">Fiction</option>
+              <option value="non-fiction">Non-Fiction</option>
+              <option value="biography">Biography</option>
+              <option value="science">Science</option>
+            </select>
+            <div *ngIf="bookForm.get('bookType')?.touched && bookForm.get('bookType')?.invalid" class="text-danger">
+              <small *ngIf="bookForm.get('bookType')?.errors?.['required']">Book type is required.</small>
+            </div>
+          </div>
+  
+          <!-- Book Description -->
+          <div class="form-group">
+            <label for="bookDescription">Book Description</label>
+            <textarea
+              id="bookDescription"
+              formControlName="bookDescription"
+              class="form-control"
+              rows="3"
+              placeholder="Enter book description"
+            ></textarea>
+            <div *ngIf="bookForm.get('bookDescription')?.touched && bookForm.get('bookDescription')?.invalid" class="text-danger">
+              <small *ngIf="bookForm.get('bookDescription')?.errors?.['required']">Book description is required.</small>
+              <small *ngIf="bookForm.get('bookDescription')?.errors?.['maxlength']">Description cannot exceed 500 characters.</small>
+            </div>
+          </div>
+  
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Add Book</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
