@@ -23,6 +23,12 @@ export class AddBooksComponent {
   ngOnInit(){
     this.api.getbooks().subscribe(res => {
       console.log(res)
+    });
+
+    this.api.madhuobvdata$.next("karthik");
+
+    this.api.madhuobvdata$.subscribe(res => {
+      console.log(res);
     })
   }
 
